@@ -7,16 +7,76 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+import PKHUD
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    let reachability = Reachability()!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
+        //取得導覽列類別的外觀代理 UINavigationBar.appearance()
+        //更改導覽列背景顏色
+        UINavigationBar.appearance().barTintColor = UIColor.init(red: 6/255.0, green: 136.0/255.0, blue: 13.0/255.0, alpha: 1.0)
+        //更改導覽列標題樣式
+        if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white, NSAttributedStringKey.font:barFont]
+        }
+        //更改導覽列按鈕項目顏色
+        UINavigationBar.appearance().tintColor = UIColor.white
+        
+        //改變狀態列顏色
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        
+        //監聽網路狀態
+        reachability.whenReachable = { _ in
+            DispatchQueue.main.async {
+                print("連線中")
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            DispatchQueue.main.async {
+                print("未連線")
+            }
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: Notification.Name.reachabilityChanged, object: reachability)
+        do {
+            try reachability.startNotifier()
+        }
+        catch {
+            print("Could not start Notifier")
+        }
+        
         return true
+    }
+    
+    @objc func internetChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+        if reachability.connection != .none {
+            if reachability.connection == .wifi {
+                DispatchQueue.main.async {
+                    print("透過WIFI連線")
+                }
+            }
+            else {
+                DispatchQueue.main.async {
+                    print("透過行動網路連線")
+                }
+            }
+        }
+        else {
+            DispatchQueue.main.async {
+                print("沒有連線")
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

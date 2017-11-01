@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -9,14 +14,47 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="Sxd-4x-Kee">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="© 2017 KSU電子計算機中心." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPF-I0-csd">
+                                <rect key="frame" x="20" y="700" width="374" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mPF-I0-csd" secondAttribute="height" multiplier="73:7" id="j4v-4Q-R3n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d71-YQ-AcM">
+                                <rect key="frame" x="107" y="263" width="200" height="228.66666666666669"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ksutlogo" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-SZ-jym">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CiO-SZ-jym" secondAttribute="height" multiplier="10:9" id="iTI-BN-4RL"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KSU行動櫥窗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeS-i9-iL7">
+                                        <rect key="frame" x="28" y="200" width="144.33333333333331" height="28.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CiO-SZ-jym" firstAttribute="width" secondItem="Sxd-4x-Kee" secondAttribute="height" multiplier="25:92" id="7oS-99-WN6"/>
+                            <constraint firstItem="BE0-aC-iI7" firstAttribute="bottom" secondItem="mPF-I0-csd" secondAttribute="bottom" constant="8" symbolic="YES" id="Hir-Z2-Oqk"/>
+                            <constraint firstItem="d71-YQ-AcM" firstAttribute="centerX" secondItem="BE0-aC-iI7" secondAttribute="centerX" id="IKa-KX-mLu"/>
+                            <constraint firstItem="d71-YQ-AcM" firstAttribute="centerY" secondItem="BE0-aC-iI7" secondAttribute="centerY" id="ZLU-6g-qy9"/>
+                            <constraint firstItem="mPF-I0-csd" firstAttribute="centerX" secondItem="BE0-aC-iI7" secondAttribute="centerX" id="dl4-wN-Ji7"/>
+                            <constraint firstItem="mPF-I0-csd" firstAttribute="width" secondItem="Sxd-4x-Kee" secondAttribute="height" multiplier="187:368" id="gT6-6w-n1b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BE0-aC-iI7"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +62,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Ksutlogo" width="204" height="200"/>
+    </resources>
 </document>
