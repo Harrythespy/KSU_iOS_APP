@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var selfImageView: UIImageView!
+    
+    //宣告使用者預設的方法
+    let defaults:UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +28,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         //變更內容列分隔線顏色
         tableView.separatorColor = UIColor.init(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
-        
-        
         //設定 Cell 估算的列高
         //tableView.estimatedRowHeight = 36.0
         //將rowHeight屬性改為ios預設列高
         tableView.rowHeight = UITableViewAutomaticDimension
         // Do any additional setup after loading the view.
+        self.selfImageView.sd_setImage(with: URL(string: "http://120.114.101.129/Swift/img/pig.jpg"), placeholderImage: UIImage(named: "placeholder"))
     }
     
     @IBAction func logout(_ sender: Any) {
         
         presentingViewController?.dismiss(animated: true, completion: nil)
+        self.defaults.removeObject(forKey: "username")
+        self.defaults.removeObject(forKey: "ksuid")
+        self.defaults.removeObject(forKey: "identity")
+        
+        if (self.defaults.string(forKey: "ksuid") == nil) {
+            print("You've logged out.")
+        }
         
     }
     
@@ -54,13 +64,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "姓名"
-            cell.valueLabel.text = "沈伯穎"
+            
+            if let username: String = defaults.string(forKey: "username") {
+                cell.valueLabel.text = username
+                print(username)
+            }
+            
         case 1:
             cell.fieldLabel.text = "KSUID"
-            cell.valueLabel.text = "S103000365"
+            
+            if let ksuid: String = defaults.string(forKey: "ksuid") {
+                cell.valueLabel.text = ksuid
+                print(ksuid)
+            }
+            
         case 2:
             cell.fieldLabel.text = "身份"
-            cell.valueLabel.text = "學生"
+            if let identity = defaults.string(forKey: "identity") {
+                cell.valueLabel.text = identity
+                print(identity)
+            }
+            
         case 3:
             cell.fieldLabel.text = "預設"
             cell.valueLabel.text = "預設"
@@ -74,15 +98,5 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

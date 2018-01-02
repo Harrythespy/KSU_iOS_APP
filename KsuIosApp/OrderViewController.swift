@@ -36,8 +36,6 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 let orderResults = try JSONDecoder().decode([Order].self, from: data)
                 
-                print(orderResults)
-                
                 for order in orderResults {
                     let orderId = order.order_id
                     let ksuId = order.ksuid

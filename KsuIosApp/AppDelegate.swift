@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import PKHUD
 import Reachability
+import SDWebImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -75,6 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             DispatchQueue.main.async {
                 print("沒有連線")
+//                let alert = UIAlertController(title: "", message: "你已經斷線了", preferredStyle: .alert)
+//                let alertAction = UIAlertAction()
+//                alert.addAction(alertAction)
             }
         }
     }

@@ -11,10 +11,16 @@ import UIKit
 class AddCartCell2: UITableViewCell {
 
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
+    
+    @IBAction func amountStepper(_ sender: UIStepper) {
+        let value = stepper.value
+        amountLabel.text = String(Int(value))
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.amountLabel.text = "1"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

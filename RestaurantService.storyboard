@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -110,7 +110,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="N0D-UV-rWn">
-                                                    <rect key="frame" x="14" y="10" width="353" height="60"/>
+                                                    <rect key="frame" x="21" y="13" width="339" height="60"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ksu" translatesAutoresizingMaskIntoConstraints="NO" id="pLR-Hu-3d8">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -120,7 +120,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="R3K-Cp-FyU">
-                                                            <rect key="frame" x="75" y="0.0" width="278" height="52.5"/>
+                                                            <rect key="frame" x="75" y="0.0" width="264" height="52.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-IP-Un9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="49.5" height="20.5"/>
@@ -149,7 +149,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="N0D-UV-rWn" secondAttribute="trailing" id="G78-0W-Arb"/>
                                                 <constraint firstItem="N0D-UV-rWn" firstAttribute="top" secondItem="h09-XF-rjz" secondAttribute="topMargin" constant="2" id="GWa-PO-6Vt"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="N0D-UV-rWn" secondAttribute="bottom" constant="1.5" id="LbT-9G-aRa"/>
                                                 <constraint firstItem="N0D-UV-rWn" firstAttribute="leading" secondItem="h09-XF-rjz" secondAttribute="leadingMargin" constant="6" id="YLU-ge-cy9"/>
                                                 <constraint firstAttribute="trailing" secondItem="2dq-fp-ugj" secondAttribute="trailing" constant="8" id="b2k-eX-QLO"/>
                                                 <constraint firstAttribute="bottom" secondItem="2dq-fp-ugj" secondAttribute="bottom" id="mAq-xU-1NG"/>
@@ -186,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a33-lb-f6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218.840579710145" y="944.429347826087"/>
+            <point key="canvasLocation" x="2218.4000000000001" y="944.07796101949032"/>
         </scene>
         <!--Restaurant Info View Controller-->
         <scene sceneID="mTX-1S-AFi">
@@ -204,7 +203,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ksu" translatesAutoresizingMaskIntoConstraints="NO" id="CIk-NV-oHU">
-                                            <rect key="frame" x="109" y="23" width="156" height="154"/>
+                                            <rect key="frame" x="111.5" y="25.5" width="152" height="149"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="CIk-NV-oHU" secondAttribute="height" multiplier="78:77" id="dxJ-s0-nPR"/>
                                             </constraints>
@@ -212,8 +211,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="CIk-NV-oHU" firstAttribute="centerY" secondItem="Nyz-mB-OB4" secondAttribute="centerY" id="VKt-YB-OYA"/>
-                                        <constraint firstItem="CIk-NV-oHU" firstAttribute="centerX" secondItem="Nyz-mB-OB4" secondAttribute="centerX" id="b7v-ik-Cqb"/>
+                                        <constraint firstItem="CIk-NV-oHU" firstAttribute="centerY" secondItem="Nyz-mB-OB4" secondAttribute="centerY" id="9NT-uR-MYn"/>
+                                        <constraint firstItem="CIk-NV-oHU" firstAttribute="centerX" secondItem="Nyz-mB-OB4" secondAttribute="centerX" id="OPL-Cl-fXC"/>
+                                        <constraint firstItem="CIk-NV-oHU" firstAttribute="width" secondItem="Nyz-mB-OB4" secondAttribute="height" multiplier="19:25" id="lRD-4g-2hx"/>
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Gxa-rr-Hum">
@@ -254,16 +254,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3e-uj-fRs">
-                                                    <rect key="frame" x="8" y="8" width="359" height="48.5"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="FIELD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6x-OS-GcA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="179.5" height="48.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="43"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALUE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAT-oC-BlF">
-                                                            <rect key="frame" x="179.5" y="0.0" width="179.5" height="48.5"/>
+                                                            <rect key="frame" x="172.5" y="0.0" width="172.5" height="43"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -304,6 +304,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MzN-TS-VSP"/>
                     <connections>
+                        <outlet property="restaurantImage" destination="CIk-NV-oHU" id="bDB-az-9nK"/>
                         <outlet property="tableView" destination="tKo-Vz-hty" id="p5P-8X-3Tr"/>
                     </connections>
                 </viewController>

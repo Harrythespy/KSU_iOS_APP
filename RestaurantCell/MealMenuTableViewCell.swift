@@ -25,6 +25,7 @@ class MealMenuTableViewCell: UITableViewCell {
         let addCart = self.cellStoryboard.instantiateViewController(withIdentifier: "AddCartViewController") as! AddCartViewController
         //addCart.restaurant = self.restaurant as Restaurant
         addCart.meal = self.meal as Meal
+        addCart.restaurant = self.restaurant as Restaurant
         self.navigationController.pushViewController(addCart, animated: true)
         
     }

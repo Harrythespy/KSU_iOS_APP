@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import PKHUD
+import SDWebImage
 
 class RestaurantMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -24,10 +26,12 @@ class RestaurantMenuViewController: UIViewController, UITableViewDelegate, UITab
         tableView.separatorColor = UIColor.init(red: 42.0/255.0, green: 152.0/255.0, blue: 47.0/255.0, alpha: 1.0)
         
         parseData()
-        
     }
     
     func parseData() {
+        
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
         
         let jsonUrlString = "http://120.114.101.129/Swift/Restaurant.php"
         guard let url = URL(string: jsonUrlString) else { return }
@@ -36,11 +40,18 @@ class RestaurantMenuViewController: UIViewController, UITableViewDelegate, UITab
             
             guard let data = data else { return }
             
+            if (err != nil) {
+                print("Error= \(err!)")
+                return
+            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response!)")
+            }
+            
             do {
                 
                 let restaurantResults = try JSONDecoder().decode([Restaurant].self, from: data)
-                
-                print(restaurantResults)
                 
                 for restaurant in restaurantResults {
                     let rid = restaurant.restaurant_id
@@ -57,6 +68,7 @@ class RestaurantMenuViewController: UIViewController, UITableViewDelegate, UITab
                 }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    PKHUD.sharedHUD.hide()
                 }
             }
             catch let jsonErr {
@@ -80,6 +92,7 @@ class RestaurantMenuViewController: UIViewController, UITableViewDelegate, UITab
         
         restaurant = restaurants[indexPath.row]
         
+        cell.thumbnailImageView.sd_setImage(with: URL(string: "http://120.114.101.129/Swift/img/\(self.restaurants[indexPath.row].restaurant_id).jpg"), placeholderImage: UIImage(named: "\(self.restaurants[indexPath.row].name)"))
         cell.nameLabel?.text = restaurant.name
         cell.shortInfoLabel?.text = restaurant.short_info
         

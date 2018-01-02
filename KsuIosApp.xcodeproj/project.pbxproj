@@ -22,6 +22,8 @@
 		829442931F83B37200937349 /* MealMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829442921F83B37200937349 /* MealMenuTableViewCell.swift */; };
 		82A184A51F91F6DD001D09DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A184A41F91F6DD001D09DA /* User.swift */; };
 		82A184A71F921C6E001D09DA /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A184A61F921C6E001D09DA /* OrderDetailCell.swift */; };
+		82B02BC91FB21C7100E5A917 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B02BC81FB21C7100E5A917 /* CartCell.swift */; };
+		82B02BCC1FB21F8100E5A917 /* CartTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B02BCB1FB21F8100E5A917 /* CartTotalCell.swift */; };
 		82B8B60F1F9B46F4009A8BFB /* MealSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B8B60E1F9B46F4009A8BFB /* MealSelected.storyboard */; };
 		82B8B6111F9B47AC009A8BFB /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8B6101F9B47AC009A8BFB /* CartViewController.swift */; };
 		82B8B6131F9B48BC009A8BFB /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B8B6121F9B48BC009A8BFB /* ShoppingCart.storyboard */; };
@@ -48,6 +50,7 @@
 		82F1984B1F0E264F0031AE01 /* KsuIosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1984A1F0E264F0031AE01 /* KsuIosAppTests.swift */; };
 		82F198561F0E264F0031AE01 /* KsuIosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F198551F0E264F0031AE01 /* KsuIosAppUITests.swift */; };
 		82F199281F18B2F50031AE01 /* RDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F199271F18B2F50031AE01 /* RDetailViewController.swift */; };
+		82F3272B1FC00DF300C4D00C /* M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3272A1FC00DF300C4D00C /* M.swift */; };
 		82FE88401F86B5D50027C971 /* OrderDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE883F1F86B5D50027C971 /* OrderDetailTableViewCell.swift */; };
 		82FE88421F86B7BC0027C971 /* MealNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE88411F86B7BC0027C971 /* MealNavigationController.swift */; };
 		82FECC671F9DA58A002BC132 /* AddCartCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FECC661F9DA58A002BC132 /* AddCartCell3.swift */; };
@@ -93,6 +96,8 @@
 		829442921F83B37200937349 /* MealMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealMenuTableViewCell.swift; sourceTree = "<group>"; };
 		82A184A41F91F6DD001D09DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		82A184A61F921C6E001D09DA /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
+		82B02BC81FB21C7100E5A917 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		82B02BCB1FB21F8100E5A917 /* CartTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTotalCell.swift; sourceTree = "<group>"; };
 		82B8B60E1F9B46F4009A8BFB /* MealSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MealSelected.storyboard; sourceTree = "<group>"; };
 		82B8B6101F9B47AC009A8BFB /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		82B8B6121F9B48BC009A8BFB /* ShoppingCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 		82F198551F0E264F0031AE01 /* KsuIosAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KsuIosAppUITests.swift; sourceTree = "<group>"; };
 		82F198571F0E264F0031AE01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82F199271F18B2F50031AE01 /* RDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDetailViewController.swift; sourceTree = "<group>"; };
+		82F3272A1FC00DF300C4D00C /* M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M.swift; sourceTree = "<group>"; };
 		82FE883F1F86B5D50027C971 /* OrderDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailTableViewCell.swift; sourceTree = "<group>"; };
 		82FE88411F86B7BC0027C971 /* MealNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealNavigationController.swift; sourceTree = "<group>"; };
 		82FECC661F9DA58A002BC132 /* AddCartCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartCell3.swift; sourceTree = "<group>"; };
@@ -182,6 +188,15 @@
 				82F198391F0E264F0031AE01 /* Main.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		82B02BCA1FB21C7C00E5A917 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				82B02BC81FB21C7100E5A917 /* CartCell.swift */,
+				82B02BCB1FB21F8100E5A917 /* CartTotalCell.swift */,
+			);
+			path = ShoppingCart;
 			sourceTree = "<group>";
 		};
 		82B8B6161F9B5535009A8BFB /* Object */ = {
@@ -278,6 +293,9 @@
 		82DF76BB1F6A66830014DE08 /* tableCell */ = {
 			isa = PBXGroup;
 			children = (
+				82ED69891F56B7F100CF7808 /* ProfileTableViewCell.swift */,
+				821285BE1F9A71F300AE1319 /* MainMenuCell.swift */,
+				82B02BCA1FB21C7C00E5A917 /* ShoppingCart */,
 				82B8B6191F9B5603009A8BFB /* RestaurantCell */,
 				82B8B6181F9B55DA009A8BFB /* OrderCell */,
 			);
@@ -317,13 +335,12 @@
 				824A296C1F6BC2A20027D1A1 /* Designable */,
 				82DF76BB1F6A66830014DE08 /* tableCell */,
 				82F198351F0E264F0031AE01 /* AppDelegate.swift */,
+				82F3272A1FC00DF300C4D00C /* M.swift */,
 				825A32201FA0B81C00575D18 /* Reachability.swift */,
 				82F198371F0E264F0031AE01 /* ViewController.swift */,
 				8267B5DD1F60DE3000855137 /* MainMenuViewController.swift */,
-				821285BE1F9A71F300AE1319 /* MainMenuCell.swift */,
 				821285C01F9A7A6900AE1319 /* HeaderCRV.swift */,
 				823945141F68C5B800B7E3B0 /* ProfileViewController.swift */,
-				82ED69891F56B7F100CF7808 /* ProfileTableViewCell.swift */,
 				82F1983C1F0E264F0031AE01 /* Assets.xcassets */,
 				82F198411F0E264F0031AE01 /* Info.plist */,
 			);
@@ -629,12 +646,14 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -678,7 +697,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B02BCC1FB21F8100E5A917 /* CartTotalCell.swift in Sources */,
 				82A184A51F91F6DD001D09DA /* User.swift in Sources */,
+				82B02BC91FB21C7100E5A917 /* CartCell.swift in Sources */,
 				8263817D1F690F4E008E0ECA /* Restaurant.swift in Sources */,
 				82CDBB0C1F9B57F10093F0F0 /* QRCodeController.swift in Sources */,
 				82CDBB141F9B58250093F0F0 /* RestaurantInfoViewController.swift in Sources */,
@@ -712,6 +733,7 @@
 				82DF76C11F6A825E0014DE08 /* RestaurantTableViewCell.swift in Sources */,
 				8267B5DC1F60DB4600855137 /* MainTabBarController.swift in Sources */,
 				821285BF1F9A71F300AE1319 /* MainMenuCell.swift in Sources */,
+				82F3272B1FC00DF300C4D00C /* M.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -37,29 +37,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="owA-56-MkJ">
-                                                    <rect key="frame" x="8" y="8" width="359" height="63.5"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="58"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KsuLogoOne" translatesAutoresizingMaskIntoConstraints="NO" id="NiL-GX-tRD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="63.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="58"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="ZIR-5l-j2c"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="l74-d1-whE"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Fb-gf-7Ip">
-                                                            <rect key="frame" x="70" y="0.0" width="289" height="63.5"/>
+                                                            <rect key="frame" x="70" y="0.0" width="275" height="58"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pZy-5U-7xn">
-                                                                    <rect key="frame" x="0.0" y="11.5" width="160.5" height="52"/>
+                                                                    <rect key="frame" x="0.0" y="6" width="146.5" height="52"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MEALNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-e9-1Eg">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="160.5" height="23.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="146.5" height="23.5"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="SMALLTYPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZZ-XR-8kK">
-                                                                            <rect key="frame" x="0.0" y="28.5" width="160.5" height="23.5"/>
+                                                                            <rect key="frame" x="0.0" y="28.5" width="146.5" height="23.5"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -67,13 +66,13 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNl-CH-gER">
-                                                                    <rect key="frame" x="180.5" y="0.0" width="55.5" height="63.5"/>
+                                                                    <rect key="frame" x="166.5" y="0.0" width="55.5" height="58"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vc-Sb-2wU">
-                                                                    <rect key="frame" x="256" y="0.0" width="33" height="63.5"/>
+                                                                    <rect key="frame" x="242" y="0.0" width="33" height="58"/>
                                                                     <state key="normal" image="Add"/>
                                                                     <connections>
                                                                         <action selector="addCart:" destination="9H3-eS-Nm5" eventType="touchUpInside" id="8W2-iI-9Nt"/>
@@ -301,8 +300,11 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="qCg-ax-iol">
+                                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="qCg-ax-iol">
                                                                     <rect key="frame" x="140.5" y="25.5" width="94" height="29"/>
+                                                                    <connections>
+                                                                        <action selector="amountStepper:" destination="TMk-hJ-5PJ" eventType="valueChanged" id="TJx-WB-ecN"/>
+                                                                    </connections>
                                                                 </stepper>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="AMOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-NT-GIO">
                                                                     <rect key="frame" x="254.5" y="29.5" width="120.5" height="20.5"/>
@@ -344,6 +346,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amountLabel" destination="Pfb-NT-GIO" id="COS-Ow-gRE"/>
+                                            <outlet property="stepper" destination="qCg-ax-iol" id="oWz-BR-cch"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell3" rowHeight="100" id="Dzp-HD-9w9" customClass="AddCartCell3" customModule="KsuIosApp" customModuleProvider="target">
@@ -359,7 +362,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yxm-Nx-J4c">
                                                             <rect key="frame" x="20" y="8" width="335" height="84"/>
                                                             <subviews>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lzw-2p-GTt">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lzw-2p-GTt">
                                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="84"/>
                                                                     <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

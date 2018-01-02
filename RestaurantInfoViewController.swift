@@ -11,6 +11,7 @@ import UIKit
 class RestaurantInfoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var restaurantImage: UIImageView!
     
     var restaurant: Restaurant!
     
@@ -18,7 +19,7 @@ class RestaurantInfoViewController: UIViewController,UITableViewDelegate, UITabl
         super.viewDidLoad()
 
         title = restaurant.name
-        
+        self.restaurantImage.sd_setImage(with: URL(string: "http://120.114.101.129/Swift/img/\(self.restaurant.restaurant_id).jpg"), placeholderImage: UIImage(named: "\(self.restaurant.name)"))
     }
     
     //MARK: - TableView data source

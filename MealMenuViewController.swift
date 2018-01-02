@@ -38,10 +38,10 @@ class MealMenuViewController: UIViewController, UITableViewDelegate, UITableView
         cell.smallTypeLabel.text = meal.small_type
         cell.priceLabel.text = meal.price
         cell.meal = meal
+        cell.restaurant = restaurant
         
         cell.navigationController = self.navigationController!
         cell.cellStoryboard = self.storyboard!
-        //cell.restaurant = self.restaurant
         
         //cell選擇特效
         cell.selectionStyle = .none

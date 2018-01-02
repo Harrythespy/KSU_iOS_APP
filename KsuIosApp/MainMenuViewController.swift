@@ -83,7 +83,7 @@ class MainMenuViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
-        PKHUD.sharedHUD.show()
+//        PKHUD.sharedHUD.show()
         
         switch indexPath.section {
         case 0:
@@ -95,7 +95,7 @@ class MainMenuViewController: UIViewController, UICollectionViewDelegate, UIColl
                 let restaurantService = restaurantStoryboard.instantiateViewController(withIdentifier: "RDetailViewController") as! RDetailViewController
                 navigationController?.pushViewController(restaurantService, animated: true)
                 
-                PKHUD.sharedHUD.hide()
+//                PKHUD.sharedHUD.hide()
                 
             default:
                 break
