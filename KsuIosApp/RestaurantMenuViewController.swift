@@ -10,7 +10,7 @@ import UIKit
 import PKHUD
 import SDWebImage
 
-class RestaurantMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RestaurantMenuViewController: BaseController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     
@@ -108,8 +108,6 @@ class RestaurantMenuViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("已選擇了\(restaurants[indexPath.row].name)")
-        
         let indexPath = tableView.indexPathForSelectedRow!
         let restaurantInfo = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantInfoViewController") as! RestaurantInfoViewController
         navigationController?.pushViewController(restaurantInfo, animated: true)
@@ -122,7 +120,6 @@ class RestaurantMenuViewController: UIViewController, UITableViewDelegate, UITab
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
         
     }
-    
     
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

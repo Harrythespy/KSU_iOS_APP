@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantInfoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class RestaurantInfoViewController: BaseController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var restaurantImage: UIImageView!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MealMenuViewController: BaseController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
     

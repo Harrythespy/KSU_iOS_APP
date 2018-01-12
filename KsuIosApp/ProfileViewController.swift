@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: BaseController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var selfImageView: UIImageView!

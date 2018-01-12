@@ -9,14 +9,14 @@
 import UIKit
 import PKHUD
 
-class ViewController: UIViewController {
+class ViewController: BaseController {
     
     
     @IBOutlet weak var ksuid: UITextField! //UI的ksuid輸入框
     @IBOutlet weak var pwd: UITextField! //UI的密碼輸入框
     
     let m = M() //宣告自訂函式類別
-    let urlString = "http://120.114.101.129/Swift/test.php" //使用者ＡＰＩ網址
+    let urlString = "http://120.114.101.129/Swift/user.php" //使用者ＡＰＩ網址
     
     var user = [User]()
     var status = ""
@@ -27,12 +27,11 @@ class ViewController: UIViewController {
     //儲存帳密
     let defaults: UserDefaults = UserDefaults.standard
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //改變狀態列顏色
-        //UIApplication.shared.statusBarStyle = .default
+        UIApplication.shared.statusBarStyle = .default
         
         //使用輸入框時出現刪除按鈕
         ksuid.clearButtonMode = .whileEditing
@@ -42,7 +41,7 @@ class ViewController: UIViewController {
         
         self.defaults.removeObject(forKey: "cartList")
         
-        ksuid.text = "aaa"
+        ksuid.text = "S103000365"
         pwd.text = "bbb"
     }
     
@@ -80,7 +79,6 @@ class ViewController: UIViewController {
                     self.card_id = userJson.card_id
                     self.name = userJson.name
                     self.identity = userJson.identity
-                    print(self.status)
                     
                 }catch let jsonErr {
                     print("Error Serializing Json:", jsonErr)

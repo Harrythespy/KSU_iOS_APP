@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 
-class MainMenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainMenuViewController: BaseController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     let pictures = ["KS_0", "ksu", "ksu"]
     let schoolPics = ["KsuLogoOne", "ksu", "ksu", "ksu", "ksu", "ksu"]

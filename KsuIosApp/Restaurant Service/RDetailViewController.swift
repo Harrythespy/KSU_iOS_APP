@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RDetailViewController: UIViewController {
+class RDetailViewController: BaseController {
 
     var restuarant: Restaurant!
     

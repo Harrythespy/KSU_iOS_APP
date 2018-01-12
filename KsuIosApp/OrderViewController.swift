@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OrderViewController: BaseController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     

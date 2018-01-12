@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QRCodeController: UIViewController {
+class QRCodeController: BaseController {
 
     @IBOutlet var qrcodeImageView: UIImageView!
     @IBOutlet var mealLabel: UILabel!

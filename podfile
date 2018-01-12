@@ -14,6 +14,8 @@ target 'KsuIosApp' do
   
   pod 'SDWebImage', '~> 4.0'
   
+  pod 'SwiftMessages'
+  
   target 'KsuIosAppTests' do
     inherit! :search_paths
     # Pods for testing

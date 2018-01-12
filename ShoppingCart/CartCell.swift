@@ -24,10 +24,5 @@ class CartCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func deleteMeal(_ sender: Any) {
-//        let alert = UIAlertController(title: "", message: "已刪除該選項", preferredStyle: .alert)
-//        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//        alert.addAction(alertAction)
-    }
     
 }

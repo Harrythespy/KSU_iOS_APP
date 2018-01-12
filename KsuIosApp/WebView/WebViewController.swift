@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController {
+class WebViewController: BaseController {
 
     
     @IBOutlet weak var webView: WKWebView!
