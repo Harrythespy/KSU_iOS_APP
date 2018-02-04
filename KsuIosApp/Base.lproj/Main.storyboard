@@ -88,13 +88,14 @@
                             <constraint firstItem="2AF-pi-VEG" firstAttribute="top" secondItem="5VI-5T-AWD" secondAttribute="top" id="bDU-7t-c13"/>
                             <constraint firstItem="fPq-xa-ew0" firstAttribute="trailing" secondItem="r6u-NO-Hyg" secondAttribute="trailing" constant="20" id="grF-5c-Ley"/>
                             <constraint firstItem="r6u-NO-Hyg" firstAttribute="leading" secondItem="fPq-xa-ew0" secondAttribute="leading" constant="20" id="ili-Fh-kBJ"/>
+                            <constraint firstItem="2AF-pi-VEG" firstAttribute="width" secondItem="5VI-5T-AWD" secondAttribute="height" multiplier="375:667" id="kuW-Gm-KrL"/>
                             <constraint firstItem="2AF-pi-VEG" firstAttribute="leading" secondItem="fPq-xa-ew0" secondAttribute="leading" id="sWJ-m5-Ghd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fPq-xa-ew0"/>
                     </view>
                     <connections>
-                        <outlet property="ksuid" destination="FaQ-nD-Jry" id="eFn-wr-ok5"/>
                         <outlet property="pwd" destination="goh-G6-6lM" id="H6U-zu-VPg"/>
+                        <outlet property="usr" destination="FaQ-nD-Jry" id="Ihw-YL-3FQ"/>
                         <segue destination="epy-7K-vVG" kind="push" id="UQu-u2-WU2"/>
                     </connections>
                 </viewController>

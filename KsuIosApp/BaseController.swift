@@ -8,13 +8,23 @@
 import UIKit
 import Reachability
 import SwiftMessages
+import PKHUD
 
 class BaseController: UIViewController {
     
     let reachability = Reachability()!
+    let m = M()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        /*********** 隱藏旋轉視窗 **************/
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.hide(afterDelay: 30.0) { success in
+            self.m.alertMessage(UIViewController: self, alertTitle: "連線逾時", alertMessage: "請稍後重新嘗試登入")
+        }
+        
+        /*********** 隱藏旋轉視窗 **************/
         
         /*********** 網路狀態的UI畫面 **************/
         
@@ -27,6 +37,7 @@ class BaseController: UIViewController {
         let connectView = MessageView.viewFromNib(layout: .statusLine)
         connectView.bodyLabel?.text = "Disconnect the Internet.  請重新檢查您的網路狀態"
         
+        /*********** 網路狀態的UI畫面 **************/
         
         //監聽網路狀態
         reachability.whenReachable = { _ in

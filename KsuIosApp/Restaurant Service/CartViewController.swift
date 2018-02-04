@@ -9,24 +9,6 @@
 import UIKit
 //import IQKeyboardManagerSwift
 
-struct CartList {
-    let restaurant_id: String
-    let meal_id: String
-    let meal_name: String
-    let price: Int
-    let amount: Int
-    //let remark: String
-    
-    init(restaurant_id: String, meal_id: String, meal_name: String, price: String, amount: Int) {
-        self.restaurant_id = restaurant_id
-        self.meal_id = meal_id
-        self.meal_name = meal_name
-        self.price = Int(price)!
-        self.amount = amount
-        //self.remark = remark
-    }
-}
-
 class CartViewController: BaseController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
@@ -38,34 +20,31 @@ class CartViewController: BaseController, UITableViewDelegate, UITableViewDataSo
     let defaults: UserDefaults = UserDefaults.standard
     
     var cartLists = [CartList]()
-    var cartDics = Array<Dictionary<String, Any>>()
+    var cartDics = Array<Dictionary<String, String>>()
     
     var totalPrice: Int = 0
     var totalAmount: Int = 0
-    var remark = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //IQKeyboardManager.sharedManager().disabledToolbarClasses.append(SendOrderViewController.self)
-        
         //移除返回按鈕的標題
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "上一步", style: .plain, target: nil, action: nil)
         
-        if let cartListResults = defaults.array(forKey: "cartList") {
-            //print(cartListResults)
+        if self.defaults.dictionary(forKey: "cartList") != nil {
+            var cartListResults = self.defaults.dictionary(forKey: "cartList") as! [String: [String: Any]]
             
-            let cartList = cartListResults as! [[String: Any]]
-            var cartDic = [String: Any]()
+            let cartListArr = Array(cartListResults.keys)
+            //let cartList = cartListResults as! [String: [String: Any]]
+            var cartDic = [String: String]()
             
-            for cartContent in cartList {
-                
-                let restaurant_id = cartContent["restaurant_id"] as! String
-                let meal_id = cartContent["meal_id"] as! String
-                let meal_name = cartContent["meal_name"] as! String
-                let price = cartContent["price"] as! String
-                let amount = cartContent["amount"] as! Int
-                //let remark = cartContent["remark"] as! String
+            for cartContent in cartListArr {
+
+                let restaurant_id = cartListResults["\(cartContent)"]!["restaurant_id"] as! String
+                let meal_id = cartListResults["\(cartContent)"]!["meal_id"] as! String
+                let meal_name = cartListResults["\(cartContent)"]!["meal_name"] as! String
+                let price = cartListResults["\(cartContent)"]!["price"] as! String
+                let amount = cartListResults["\(cartContent)"]!["amount"] as! String
                 
                 self.cartLists.append(CartList(restaurant_id: restaurant_id, meal_id: meal_id, meal_name: meal_name, price: price, amount: amount))
                 cartDic.updateValue(restaurant_id, forKey: "restaurant_id")
@@ -86,6 +65,7 @@ class CartViewController: BaseController, UITableViewDelegate, UITableViewDataSo
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.tableView.reloadData()
     }
     
@@ -96,7 +76,9 @@ class CartViewController: BaseController, UITableViewDelegate, UITableViewDataSo
         let storyboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
         let sendOrder = storyboard.instantiateViewController(withIdentifier: "SendOrderViewController") as! SendOrderViewController
         self.navigationController?.pushViewController(sendOrder, animated: true)
-        
+        sendOrder.cartList = self.cartLists
+        sendOrder.price = self.totalPrice
+        sendOrder.amount = self.totalAmount
     }
     
 
@@ -141,13 +123,15 @@ class CartViewController: BaseController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let amount = Int(self.cartLists[indexPath.row].amount)!
+        let price = Int(self.cartLists[indexPath.row].price)!
         
         switch indexPath.section {
         case 0: //顯示加入購物車的餐點
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CartCell
-            let Subtotal = (self.cartLists[indexPath.row].amount * self.cartLists[indexPath.row].price)
+            let Subtotal = (amount * price)
             cell.mealLabel.text = self.cartLists[indexPath.row].meal_name
-            cell.amountLabel.text = "X\(self.cartLists[indexPath.row].amount)"
+            cell.amountLabel.text = "X\(amount)"
             cell.priceLabel.text = "NT$ \(Subtotal)"
             
             cell.showsReorderControl = true
@@ -161,8 +145,10 @@ class CartViewController: BaseController, UITableViewDelegate, UITableViewDataSo
             self.totalPrice = 0
             
             for meal in cartLists {
-                totalPrice += (meal.price * meal.amount)
-                totalAmount += meal.amount
+                let mealPrice = Int(meal.price)!
+                let mealAmount = Int(meal.amount)!
+                totalPrice += (mealPrice * mealAmount)
+                totalAmount += mealAmount
             }
             
             totalCell.totalAmountLabel.text = "X \(totalAmount)"
@@ -184,7 +170,7 @@ class CartViewController: BaseController, UITableViewDelegate, UITableViewDataSo
         if editingStyle == .delete {
             self.cartLists.remove(at: indexPath.row) //若滑動的按鈕選擇刪除，將資料列刪除
             self.cartDics.remove(at: indexPath.row) //若滑動的按鈕選擇刪除，將資料列刪除
-//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            //self.tableView.deleteRows(at: [indexPath], with: .automatic)
             
             self.defaults.set(self.cartDics, forKey: "cartList") //刪除後將新的陣列存入cartList中
             self.defaults.synchronize() //將資料寫進userDefault中
@@ -212,20 +198,30 @@ class CartViewController: BaseController, UITableViewDelegate, UITableViewDataSo
         
     }
     
-//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        if let indexPath = self.tableView.indexPathForSelectedRow {
-//            let moveMeal = self.cartLists.remove(at: indexPath.row)
-//            self.cartLists.insert(moveMeal, at: indexPath.row)
-//
-//            self.tableView.reloadData()
-//        }
-//
-//    }
-    
     @IBAction func editButtonTapped(_ sender: Any) {
-        let tableviewEditingMode = self.tableView.isEditing
         
+        if self.editBtn.title == "編輯" {
+            self.editBtn.title = "完成"
+        }
+        else {
+            self.editBtn.title = "編輯"
+        }
+        
+        let tableviewEditingMode = self.tableView.isEditing
         self.tableView.setEditing(!tableviewEditingMode, animated: true)
     }
     
+//    func hideKeyboard()
+//    {
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+//            target: self,
+//            action: #selector(dismissKeyboard))
+//
+//        view.addGestureRecognizer(tap)
+//    }
+//
+//    @objc func dismissKeyboard()
+//    {
+//        view.endEditing(true)
+//    }
 }

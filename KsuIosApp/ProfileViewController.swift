@@ -42,6 +42,7 @@ class ProfileViewController: BaseController, UITableViewDelegate, UITableViewDat
         self.defaults.removeObject(forKey: "username")
         self.defaults.removeObject(forKey: "ksuid")
         self.defaults.removeObject(forKey: "identity")
+        self.defaults.removeObject(forKey: "student_id")
         
         if (self.defaults.string(forKey: "ksuid") == nil) {
             print("You've logged out.")
@@ -73,21 +74,24 @@ class ProfileViewController: BaseController, UITableViewDelegate, UITableViewDat
         case 1:
             cell.fieldLabel.text = "KSUID"
             
-            if let ksuid: String = defaults.string(forKey: "ksuid") {
+            if let ksuid: String = defaults.string(forKey: "ksuId") {
                 cell.valueLabel.text = ksuid
                 print(ksuid)
             }
             
         case 2:
+            cell.fieldLabel.text = "學號"
+            if let student_id = defaults.string(forKey: "studentId") {
+                cell.valueLabel.text = student_id
+            }
+            
+        case 3:
             cell.fieldLabel.text = "身份"
             if let identity = defaults.string(forKey: "identity") {
                 cell.valueLabel.text = identity
                 print(identity)
             }
             
-        case 3:
-            cell.fieldLabel.text = "預設"
-            cell.valueLabel.text = "預設"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

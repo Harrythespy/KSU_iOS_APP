@@ -16,10 +16,12 @@
 		824A298F1F6BDA1D0027D1A1 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A298E1F6BDA1D0027D1A1 /* CustomSegmentedControl.swift */; };
 		825A32211FA0B81C00575D18 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A32201FA0B81C00575D18 /* Reachability.swift */; };
 		8263817D1F690F4E008E0ECA /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8263817C1F690F4E008E0ECA /* Restaurant.swift */; };
+		8263C4B9200C96BD00A8E87F /* SendOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8263C4B8200C96BD00A8E87F /* SendOrderCell.swift */; };
 		8267B5DC1F60DB4600855137 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267B5DB1F60DB4600855137 /* MainTabBarController.swift */; };
 		8267B5DE1F60DE3000855137 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267B5DD1F60DE3000855137 /* MainMenuViewController.swift */; };
 		8294428F1F839F3700937349 /* RestaurantInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294428E1F839F3700937349 /* RestaurantInfoTableViewCell.swift */; };
 		829442931F83B37200937349 /* MealMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829442921F83B37200937349 /* MealMenuTableViewCell.swift */; };
+		829748BB2015CDBE0078DE77 /* OrderCompletedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829748BA2015CDBE0078DE77 /* OrderCompletedVC.swift */; };
 		82A184A51F91F6DD001D09DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A184A41F91F6DD001D09DA /* User.swift */; };
 		82A184A71F921C6E001D09DA /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A184A61F921C6E001D09DA /* OrderDetailCell.swift */; };
 		82B02BC91FB21C7100E5A917 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B02BC81FB21C7100E5A917 /* CartCell.swift */; };
@@ -30,6 +32,7 @@
 		82B8B6131F9B48BC009A8BFB /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B8B6121F9B48BC009A8BFB /* ShoppingCart.storyboard */; };
 		82B8B6151F9B5095009A8BFB /* RestaurantService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B8B6141F9B5095009A8BFB /* RestaurantService.storyboard */; };
 		82C182011F702D060088E013 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C182001F702D060088E013 /* Order.swift */; };
+		82C599EF200DF38A0039699A /* CartList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C599EE200DF38A0039699A /* CartList.swift */; };
 		82CDBB091F9B57CE0093F0F0 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CDBB081F9B57CD0093F0F0 /* OrderViewController.swift */; };
 		82CDBB0C1F9B57F10093F0F0 /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CDBB0A1F9B57F10093F0F0 /* QRCodeController.swift */; };
 		82CDBB0D1F9B57F10093F0F0 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CDBB0B1F9B57F10093F0F0 /* OrderDetailViewController.swift */; };
@@ -91,10 +94,12 @@
 		824A298E1F6BDA1D0027D1A1 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegmentedControl.swift; path = KsuIosApp/CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		825A32201FA0B81C00575D18 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		8263817C1F690F4E008E0ECA /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		8263C4B8200C96BD00A8E87F /* SendOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrderCell.swift; sourceTree = "<group>"; };
 		8267B5DB1F60DB4600855137 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = KsuIosApp/MainTabBarController.swift; sourceTree = "<group>"; };
 		8267B5DD1F60DE3000855137 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		8294428E1F839F3700937349 /* RestaurantInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoTableViewCell.swift; sourceTree = "<group>"; };
 		829442921F83B37200937349 /* MealMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealMenuTableViewCell.swift; sourceTree = "<group>"; };
+		829748BA2015CDBE0078DE77 /* OrderCompletedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompletedVC.swift; sourceTree = "<group>"; };
 		82A184A41F91F6DD001D09DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		82A184A61F921C6E001D09DA /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
 		82B02BC81FB21C7100E5A917 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 		82B8B6121F9B48BC009A8BFB /* ShoppingCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
 		82B8B6141F9B5095009A8BFB /* RestaurantService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantService.storyboard; sourceTree = "<group>"; };
 		82C182001F702D060088E013 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		82C599EE200DF38A0039699A /* CartList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartList.swift; sourceTree = "<group>"; };
 		82CDBB081F9B57CD0093F0F0 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderViewController.swift; path = KsuIosApp/OrderViewController.swift; sourceTree = SOURCE_ROOT; };
 		82CDBB0A1F9B57F10093F0F0 /* QRCodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = SOURCE_ROOT; };
 		82CDBB0B1F9B57F10093F0F0 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -195,6 +201,7 @@
 		82B02BCA1FB21C7C00E5A917 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				8263C4B8200C96BD00A8E87F /* SendOrderCell.swift */,
 				82B02BC81FB21C7100E5A917 /* CartCell.swift */,
 				82B02BCB1FB21F8100E5A917 /* CartTotalCell.swift */,
 			);
@@ -204,6 +211,7 @@
 		82B8B6161F9B5535009A8BFB /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				82C599EE200DF38A0039699A /* CartList.swift */,
 				8263817C1F690F4E008E0ECA /* Restaurant.swift */,
 				82C182001F702D060088E013 /* Order.swift */,
 				82A184A41F91F6DD001D09DA /* User.swift */,
@@ -272,6 +280,7 @@
 				82CDBB111F9B58240093F0F0 /* RestaurantInfoViewController.swift */,
 				82CDBB0F1F9B58240093F0F0 /* MealMenuViewController.swift */,
 				82CDBB101F9B58240093F0F0 /* AddCartViewController.swift */,
+				829748BA2015CDBE0078DE77 /* OrderCompletedVC.swift */,
 			);
 			path = "Reservation - Controller";
 			sourceTree = "<group>";
@@ -722,8 +731,10 @@
 				82FE88401F86B5D50027C971 /* OrderDetailTableViewCell.swift in Sources */,
 				822B347D1F9491540014812C /* OrderDetailCell2.swift in Sources */,
 				824A298F1F6BDA1D0027D1A1 /* CustomSegmentedControl.swift in Sources */,
+				8263C4B9200C96BD00A8E87F /* SendOrderCell.swift in Sources */,
 				82CDBB091F9B57CE0093F0F0 /* OrderViewController.swift in Sources */,
 				823945151F68C5B800B7E3B0 /* ProfileViewController.swift in Sources */,
+				82C599EF200DF38A0039699A /* CartList.swift in Sources */,
 				82F076891F99DE170007819D /* AddCartCell.swift in Sources */,
 				82F199281F18B2F50031AE01 /* RDetailViewController.swift in Sources */,
 				82ED69881F56B4E300CF7808 /* NavigationController.swift in Sources */,
@@ -737,6 +748,7 @@
 				82B8B6111F9B47AC009A8BFB /* CartViewController.swift in Sources */,
 				82DF76C11F6A825E0014DE08 /* RestaurantTableViewCell.swift in Sources */,
 				8267B5DC1F60DB4600855137 /* MainTabBarController.swift in Sources */,
+				829748BB2015CDBE0078DE77 /* OrderCompletedVC.swift in Sources */,
 				82E15FF520074A19000CE6FA /* SendOrderViewController.swift in Sources */,
 				821285BF1F9A71F300AE1319 /* MainMenuCell.swift in Sources */,
 				82F3272B1FC00DF300C4D00C /* M.swift in Sources */,

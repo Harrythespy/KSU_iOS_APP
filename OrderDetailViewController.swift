@@ -15,6 +15,7 @@ class OrderDetailViewController: BaseController, UITableViewDataSource, UITableV
     var order: Order!
     var totalPrice: Int = 0
     var totalAmount: Int = 0
+    let screenBrightness = UIScreen.main.brightness
     
     override func viewDidLoad() {
         super.viewDidLoad()

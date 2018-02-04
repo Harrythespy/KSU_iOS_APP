@@ -13,12 +13,25 @@ class OrderViewController: BaseController, UITableViewDataSource, UITableViewDel
     @IBOutlet var tableView: UITableView!
     
     var orders = [Order]()
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         parseData()
         
+        self.refreshControl.addTarget(self, action: #selector(sortArray), for:.valueChanged)
+        self.refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新訂單資料")
+        self.tableView.addSubview(refreshControl)
+    }
+    
+    //MARK: - Refresh Data
+    
+    @objc func sortArray() {
+        self.parseData()
+        self.orders.removeAll()
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     //MARK: - Parse JSON
@@ -81,13 +94,14 @@ class OrderViewController: BaseController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You Selected \(indexPath.row)")
-        
         let indexPath = tableView.indexPathForSelectedRow!
         let orderDetail = self.storyboard?.instantiateViewController(withIdentifier: "OrderDetailViewController") as! OrderDetailViewController
         navigationController?.pushViewController(orderDetail, animated: true)
         orderDetail.order = orders[indexPath.row] as Order
-
+    }
+    
+    @IBAction func unwindToOrder(segue: UIStoryboardSegue) {
+        
     }
     
     //MARK: - Segue

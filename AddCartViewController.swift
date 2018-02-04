@@ -16,8 +16,9 @@ class AddCartViewController: BaseController, UITableViewDelegate, UITableViewDat
     var meal: Meal!
     var amount: Int = 1 //初始化數量
     //var remark: String = "" //初始化備註項目
-    
-    var cartList = Array<Dictionary<String, Any>>() //初始化儲存進userDefaults的二維陣列
+    var cartList = [String: [String: String]]()
+    var mealToList = [String: String]() //儲存購物車裡的每筆資料
+    //var cartList = Array<Dictionary<String, Any>>() //初始化儲存進userDefaults的二維陣列
     
     let defaults: UserDefaults = UserDefaults.standard
     
@@ -97,43 +98,38 @@ class AddCartViewController: BaseController, UITableViewDelegate, UITableViewDat
     }
     
     func addToUserDefaults() { //將購物車資料加進陣列中
-        DispatchQueue.main.async {
+        
+        let cell2 = self.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! AddCartCell2
+        self.amount = Int(cell2.stepper.value)
+        let amountStr = String(self.amount)
+        
+        if self.defaults.dictionary(forKey: "cartList") != nil {
+            self.cartList = self.defaults.dictionary(forKey: "cartList") as! [String: [String: String]] //如果userdefault的cartList已經存在了，則使用原有資料
             
-            var mealToList = [String: Any]() //儲存購物車裡的每筆資料
+            self.accumulate() //判斷id是否存在，將相同id的陣列累加
             
-            if self.defaults.array(forKey: "cartList") != nil {
-                
-                self.cartList = self.defaults.array(forKey: "cartList")! as! [Dictionary<String, Any>] //如果userdefault的cartList已經存在了，則使用原有資料
-                
-                self.accumulate() //判斷id是否存在，將相同id的陣列累加
-                
-                self.defaults.set(self.cartList, forKey: "cartList")
-                self.defaults.synchronize()
-                
-            }
-            else {
-                let cell2 = self.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! AddCartCell2
-                self.amount = Int(cell2.stepper.value)
-                
-                /*********** 新增一筆資料 ************/
-                mealToList.updateValue(self.restaurant.restaurant_id, forKey: "restaurant_id")
-                mealToList.updateValue(self.meal.meal_id, forKey: "meal_id")
-                mealToList.updateValue(self.meal.meal_name, forKey: "meal_name")
-                mealToList.updateValue(self.meal.price, forKey: "price")
-                mealToList.updateValue(self.amount, forKey: "amount")
-                //mealToList.updateValue(self.remark, forKey: "remark")
-                
-                self.cartList.append(mealToList) //加入二維陣列中的最後一筆
-                
-                self.defaults.set(self.cartList, forKey: "cartList")
-                self.defaults.synchronize()
+            
+            self.defaults.set(self.cartList, forKey: "cartList")
+            self.defaults.synchronize()
+            
+        }
+        else {
+            /*********** 新增一筆資料 ************/
+            self.mealToList.updateValue(self.restaurant.restaurant_id, forKey: "restaurant_id")
+            self.mealToList.updateValue(self.meal.meal_id, forKey: "meal_id")
+            self.mealToList.updateValue(self.meal.meal_name, forKey: "meal_name")
+            self.mealToList.updateValue(self.meal.price, forKey: "price")
+            self.mealToList.updateValue(amountStr, forKey: "amount")
+            //mealToList.updateValue(self.remark, forKey: "remark")
+            
+            self.cartList.updateValue(self.mealToList, forKey: "\(self.meal.meal_id)") //加入二維陣列中的最後一筆
+            
+            self.defaults.set(self.cartList, forKey: "cartList")
+            self.defaults.synchronize()
 //                print(self.cartList)
-            }
-            
-            
-    //        print(self.cartList)
             /*********** 新增一筆資料 ************/
         }
+        
     }
     
     @IBAction func addCart(_ sender: Any) {
@@ -156,27 +152,27 @@ class AddCartViewController: BaseController, UITableViewDelegate, UITableViewDat
     }
     
     func accumulate() {
-        var exsist = false
-        var replaceKey = ""
-        
-//        for i in 0...self.cartList.count {
-//            for cartContent in self.cartList[i] {
-//                //var aa = cartContent as! Dictionary<String, Any>
-//                print(cartContent)
-//                let meal_id  = cartContent["meal_id"] as! String
-//                print(meal_id)
-//                if self.meal.meal_id == meal_id {
-//                    (self.cartList[0])["cartContent"] = 1
-//                    
-//                    
-//                    var amount = cartContent["amount"] as! Int
-//                    print("self.amount:\(self.amount) \n amount:\(amount)")
-//                    
-//                    print("self.amount:\(self.amount) \n amount:\(amount)")
-//                    return
-//                }
-//            }
-//        }
+        let amountStr = String(self.amount)
+        if (self.cartList.index(forKey: self.meal.meal_id) != nil) {
+            let amount = Int(self.cartList["\(self.meal.meal_id)"]!["amount"]!)!
+            self.cartList["\(self.meal.meal_id)"]!["amount"] = "\(amount + self.amount)"
+        }
+        else {
+            /*********** 新增一筆資料 ************/
+            self.mealToList.updateValue(self.restaurant.restaurant_id, forKey: "restaurant_id")
+            self.mealToList.updateValue(self.meal.meal_id, forKey: "meal_id")
+            self.mealToList.updateValue(self.meal.meal_name, forKey: "meal_name")
+            self.mealToList.updateValue(self.meal.price, forKey: "price")
+            self.mealToList.updateValue(amountStr, forKey: "amount")
+            //mealToList.updateValue(self.remark, forKey: "remark")
+            
+            self.cartList.updateValue(self.mealToList, forKey: "\(self.meal.meal_id)") //加入二維陣列中的最後一筆
+            
+            self.defaults.set(self.cartList, forKey: "cartList")
+            self.defaults.synchronize()
+            //print(self.cartList)
+            /*********** 新增一筆資料 ************/
+        }
         
     }
     

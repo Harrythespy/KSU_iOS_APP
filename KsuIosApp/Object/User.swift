@@ -9,14 +9,16 @@
 class User: Decodable {
 
     let status: String
-    let card_id: String
+    let ksuId: String
+    let studentId: String
     let name: String
     let identity: String
     
-    init(status: String, card_id: String, name: String, identity: String) {
+    init(status: String, ksuId: String, studentId: String, name: String, identity: String) {
     
         self.status = status
-        self.card_id = card_id
+        self.ksuId = ksuId
+        self.studentId = studentId
         self.name = name
         self.identity = identity
     }

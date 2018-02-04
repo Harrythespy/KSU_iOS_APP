@@ -17,6 +17,7 @@ class QRCodeController: BaseController {
     var order: Order!
     var labelString: String = ""
     var labelString2: String = ""
+    let screenBrightness = UIScreen.main.brightness
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,12 @@ class QRCodeController: BaseController {
         
         generateQrCode()
         
+        UIScreen.main.brightness = CGFloat(1.0)
+        self.navigationItem.leftBarButtonItem?.action = #selector(back(sender:))
+    }
+    
+    @objc func back(sender: UIBarButtonItem) {
+        UIScreen.main.brightness = self.screenBrightness
     }
     
     //字串生成QRCODE
